@@ -16,13 +16,6 @@ const NavbarComponent = () => {
           <a href="/about-us" className="hover:text-blue-500 transition-colors">About</a>
           <a href="/event" className="hover:text-blue-500 transition-colors">Events</a>
         </div>
-        <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-gray-200">
-          <img 
-            src="" 
-            alt="Avatar" 
-            className="w-full h-full object-cover"
-          />
-        </div>
       </div>
     </nav>
   );

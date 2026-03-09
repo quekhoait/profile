@@ -19,8 +19,11 @@ const overviewMe = () => {
             <h3 className="text-blue-500 font-bold tracking-widest text-3xl uppercase">
                 Designer & Developer
             </h3>
+              <p className="text-white text-xl max-w-lg mx-auto leading-relaxed">
+                quekhoa2005@gmail.com
+            </p>
             <p className="text-white text-xl max-w-lg mx-auto leading-relaxed">
-                Hãy liên hệ với tôi
+                0916499634
             </p>
         </div>
       </div>
