@@ -1,6 +1,9 @@
 import React from 'react'
 
-const Event = ({id}) => {
+interface EventProps {
+  id: string;
+}
+const Event = ({id}: EventProps) => {
   return (
   <section id={id} className=" py-16 px-8">
   <div className="max-w-6xl mx-auto">

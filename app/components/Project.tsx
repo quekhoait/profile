@@ -4,7 +4,11 @@ import { ProjectCard, ProjectData } from '@/components/ui/ProjectItem';
 import React from 'react';
 
 
-const Project = ({id}) => {
+interface ProjectProps {
+  id: string;
+}
+
+const Project = ({id}: ProjectProps) => {
 
   const projects: ProjectData[] = [
     {
