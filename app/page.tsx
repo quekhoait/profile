@@ -1,4 +1,5 @@
-import CardItem from "./components/cardItem";
+
+import CardItem from "./components/CardItem";
 import Event from "./components/Event";
 import IntroduceComponent from "./components/IntroduceComponent";
 import IntroduceV2 from "./components/IntroduceV2";
