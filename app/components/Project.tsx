@@ -4,8 +4,8 @@ import { ProjectCard, ProjectData } from '@/components/ui/ProjectItem';
 import React from 'react';
 
 
-const Project = () => {
-  // Quản lý tập trung dữ liệu danh sách dự án ở đây
+const Project = ({id}) => {
+
   const projects: ProjectData[] = [
     {
       id: 1,
@@ -64,7 +64,7 @@ const Project = () => {
   ];
 
   return (
-    <section className="py-16 px-8 ">
+    <section id={id} className="py-16 px-8 ">
       <div className="max-w-6xl mx-auto">
         
         <div className="flex items-center gap-4 mb-10">

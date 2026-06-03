@@ -1,16 +1,16 @@
 "use client";
 
 import { useState, MouseEvent } from "react";
-import { Button } from "../../components/ui/button";
 import Typewriter from "typewriter-effect";
 import { Mail, MapPin } from "lucide-react"; 
 
-export default function IntroduceComponent() {
+export default function IntroduceV2() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
-    const x = (e.clientX - window.innerWidth / 2) / 40;
-    const y = (e.clientY - window.innerHeight / 2) / 40;
+    // Tạo hiệu ứng lắc nhẹ theo chuột cho ảnh chân dung
+    const x = (e.clientX - window.innerWidth / 2) / 60;
+    const y = (e.clientY - window.innerHeight / 2) / 60;
     setMousePos({ x, y });
   };
 
@@ -22,28 +22,15 @@ export default function IntroduceComponent() {
     <section
       onMouseMove={handleMouseMove}
       onMouseLeave={resetMouse}
-      className="relative overflow-hidden text-white flex items-center pt-24 pb-6 md:pt-32" 
+      className="relative overflow-hidden text-white flex items-center pt-24 pb-12 md:pt-32" 
     >
-      <div className="absolute inset-0 hidden md:flex top-20 justify-center pointer-events-none select-none z-0">
-        <h1
-          style={{
-            transform: `translate(${mousePos.x}px, ${mousePos.y}px)`,
-          }}
-          className="text-[11vw] font-black tracking-[0.25em] text-yellow-500 opacity-30 text-center leading-[0.95] transition-all duration-300 ease-out"
-        >
-          HUYNH VAN
-          <br />
-          QUE KHOA
-        </h1>
-      </div>
-
-      {/* Glow Effects */}
-      <div className="absolute top-10 left-10 w-48 h-48 md:w-96 md:h-96 bg-blue-500/10 blur-[80px] md:blur-[150px] rounded-full" />
-      <div className="absolute bottom-10 right-10 w-48 h-48 md:w-96 md:h-96 bg-yellow-500/10 blur-[80px] md:blur-[150px] rounded-full" />
+      {/* Glow Effects (Đèn nền mờ tạo chiều sâu) */}
+      <div className="absolute top-10 left-10 w-48 h-48 md:w-96 md:h-96 bg-blue-500/10 blur-[80px] md:blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-48 h-48 md:w-96 md:h-96 bg-yellow-500/10 blur-[80px] md:blur-[150px] rounded-full pointer-events-none" />
 
       {/* Main Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
           {/* Left Column: Info */}
           <div className="flex flex-col justify-center order-2 lg:order-1">
@@ -72,6 +59,7 @@ export default function IntroduceComponent() {
               </span>
             </h1>
 
+            {/* Typewriter Description */}
             <div className="text-slate-400 text-base md:text-lg leading-relaxed max-w-xl mb-6 md:mb-8 min-h-[56px] md:min-h-[64px]">
               <Typewriter
                 options={{
@@ -91,35 +79,45 @@ export default function IntroduceComponent() {
             </div>
 
             {/* Quote */}
-            <div className="border-l-4 border-yellow-500 pl-4 md:pl-5 py-2 bg-yellow-500/5 rounded-r-xl max-w-xl mb-8 md:mb-10">
+            <div className="border-l-4 border-yellow-500 pl-4 md:pl-5 py-2 bg-yellow-500/5 rounded-r-xl max-w-xl">
               <p className="italic text-slate-300 text-sm md:text-base leading-relaxed">
                 “Tâm ở đâu, năng lượng ở đó!”
               </p>
             </div>
           </div>
 
-          {/* Right Column: Avatar Block */}
-          <div className="flex justify-center lg:justify-end order-1 lg:order-2 mb-12 lg:mb-0 pt-16 lg:pt-0">
-            {/* Thêm class `group` ở đây để kích hoạt hiệu ứng hover cho các thẻ con */}
-            <div className="group relative w-72 h-72 sm:w-80 sm:h-80 rounded-full border border-white/40 bg-black/40 backdrop-blur-md shadow-2xl flex items-center justify-center transition-all duration-300">
+          {/* Right Column: Clean Vertical Image & Vertical Text */}
+          <div className="flex justify-center lg:justify-end order-1 lg:order-2">
               
-              {/* Glow hiệu ứng viền đổi màu phía sau */}
-              <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 via-cyan-400 to-yellow-400 rounded-full blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-500" />
-
-              {/* Khối chứa ảnh chân dung */}
-              <div className="absolute top-[-20px] left-0 right-0 overflow-visible rounded-full flex items-end justify-center">
+              {/* Ảnh chân dung dọc đứng thẳng - Đã xóa bỏ hoàn toàn khung border/nền */}
+              <div className="relative h-[380px] sm:h-[450px] w-[100%] pointer-events-none">
                 <img
-                  src="https://res.cloudinary.com/ds11ggie4/image/upload/v1780368522/606448772_18093801767505207_2570095527280900645_n_vh1ny7-removebg-preview_gw8zhk.png"
-                  alt="Quế Khoa"
-                  className="w-[95%] h-[calc(100%+70px)] sm:h-[calc(100%+80px)] -mt-20 sm:-mt-24 object-contain select-none pointer-events-none drop-shadow-[0_10px_20px_rgba(0,0,0,0.6)] transform scale-105 group-hover:scale-115 transition-transform duration-500 ease-out"
+                  src="https://res.cloudinary.com/ds11ggie4/image/upload/v1780473628/IMG_1562_wfgvcz-removebg-preview_oowu9i.png"
+                  alt="Huỳnh Văn Quế Khoa"
+                  className="w-full h-full object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.4)] transform group-hover:scale-[1.05] transition-transform duration-500 ease-out"
                 />
               </div>
 
-              {/* Badge chức danh hình tròn bo cong bọc phía dưới đáy */}
-              <div className="absolute -bottom-3 bg-slate-900/90 backdrop-blur-md px-5 py-1.5 rounded-full border border-white/10 shadow-lg z-20">
-                <h3 className="font-bold text-xs sm:text-sm tracking-wide text-cyan-400">Software Engineer</h3>
+              {/* Chữ "QUẾ KHOA" xếp dọc từng từ/chữ nằm ở bên phải ảnh */}
+              <div className="flex flex-col justify-center items-center font-black text-4xl sm:text-5xl tracking-widest leading-none bg-gradient-to-b from-blue-400 via-cyan-400 to-yellow-400 bg-clip-text text-transparent uppercase opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+                <span>Q</span>
+                <span>U</span>
+                <span>Ế</span>
+                <span className="my-3 w-2 h-2 bg-cyan-400 rounded-full animate-pulse" /> {/* Dấu chấm cách giữa Quế và Khoa */}
+                <span>K</span>
+                <span>H</span>
+                <span>O</span>
+                <span>A</span>
               </div>
-            </div>
+
+              {/* Chức danh xoay dọc nghệ thuật ở rìa ngoài cùng */}
+              <div className="absolute -left-12 top-1/2 -translate-y-1/2 -rotate-90 hidden sm:block whitespace-nowrap">
+                <span className="text-[10px] uppercase tracking-[0.3em] text-slate-500 font-bold">
+                  Software Engineer // 2026
+                </span>
+              </div>
+
+        
           </div>
 
         </div>

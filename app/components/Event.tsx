@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Event = () => {
+const Event = ({id}) => {
   return (
-  <section className=" py-16 px-8">
+  <section id={id} className=" py-16 px-8">
   <div className="max-w-6xl mx-auto">
     <div className="flex items-center gap-4 mb-10">
       <div className="w-12 h-0.5 bg-blue-500"></div>
@@ -10,7 +10,7 @@ const Event = () => {
     </div>
 
   <p className='center text-white'>
-    Dự án của bạn
+    Sự kiện đang được cập nhật, vui lòng quay lại sau!
   </p>
   </div>
 </section>
