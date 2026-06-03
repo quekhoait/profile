@@ -1,6 +1,11 @@
 import React from 'react'
 
-const linkInfomation = ({id}) => {
+
+interface EventProps {
+  id: string;
+}
+
+const linkInfomation = ({id}: EventProps) => {
   return (
   <section id={id} className="py-16 px-8">
   <div className="max-w-6xl mx-auto">
