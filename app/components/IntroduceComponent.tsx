@@ -3,7 +3,7 @@
 import { useState, MouseEvent } from "react";
 import { Button } from "../../components/ui/button";
 import Typewriter from "typewriter-effect";
-import { Mail, MapPin } from "lucide-react"; 
+import { Mail, MapPin, Phone, Linkedin } from "lucide-react";
 
 export default function IntroduceComponent() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -22,7 +22,7 @@ export default function IntroduceComponent() {
     <section
       onMouseMove={handleMouseMove}
       onMouseLeave={resetMouse}
-      className="relative overflow-hidden text-white flex items-center pt-24 pb-6 md:pt-32" 
+      className="relative overflow-hidden text-white flex items-center pt-24 pb-6 md:pt-32"
     >
       <div className="absolute inset-0 hidden md:flex top-20 justify-center pointer-events-none select-none z-0">
         <h1
@@ -44,10 +44,10 @@ export default function IntroduceComponent() {
       {/* Main Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-16 items-center">
-          
+
           {/* Left Column: Info */}
           <div className="flex flex-col justify-center order-2 lg:order-1">
-            {/* Badges: Location & Email */}
+            {/* Badges: Location, Email, Phone, LinkedIn */}
             <div className="flex flex-wrap gap-2 sm:gap-3 mb-4 md:mb-6">
               <span className="px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-slate-700 bg-slate-800/50 text-slate-300 text-[10px] md:text-xs flex items-center gap-2">
                 <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
@@ -55,13 +55,7 @@ export default function IntroduceComponent() {
                 TP. Hồ Chí Minh, Việt Nam
               </span>
 
-              <a 
-                href="mailto:quekhoa2005@gmail.com" 
-                className="px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-slate-700 bg-slate-800/50 text-slate-300 text-[10px] md:text-xs flex items-center gap-2 hover:bg-slate-800 hover:text-white transition-colors duration-300"
-              >
-                <Mail className="w-3 h-3 text-cyan-400" />
-                quekhoa2005@gmail.com
-              </a>
+
             </div>
 
             {/* Title */}
@@ -77,8 +71,8 @@ export default function IntroduceComponent() {
                 options={{
                   strings: [
                     "Đang cố gắng cốt và sống !!! 💻",
-                    "Một Fullstack Developer đam mê công nghệ. 🚀",
-                    "Luôn tìm tòi và ứng dụng AI vào thực tế. 🤖"
+                    "Code đến khi hết bug. 🚀",
+                    "Tìm bug để fix khi hết code!!"
                   ],
                   autoStart: true,
                   loop: true,
@@ -96,11 +90,31 @@ export default function IntroduceComponent() {
                 “Tâm ở đâu, năng lượng ở đó!”
               </p>
             </div>
+
+            {/* Action Call Buttons (Đã sửa lỗi trùng lặp Mail) */}
+            <div className="flex flex-wrap gap-3 mb-4 md:mb-6">
+             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=quekhoa2005@gmail.com&su=Liên hệ công việc"
+                target="_blank"
+                className="px-5 py-2.5 rounded-full border border-slate-700 bg-slate-800/50 text-slate-200 text-sm flex items-center gap-2 hover:bg-cyan-500 hover:text-slate-900 font-semibold transition-all duration-300 shadow-lg shadow-cyan-500/10"
+              >
+                <Mail className="w-4 h-4" />
+                quekhoa2005@gmail.com
+              </a>
+
+              <a
+                href="0916499634" // Thay số điện thoại của bạn vào đây
+                className="px-5 py-2.5 rounded-full border border-slate-700 bg-slate-800/50 text-slate-200 text-sm flex items-center gap-2 hover:bg-green-500 hover:text-slate-900 font-semibold transition-all duration-300 shadow-lg shadow-green-500/10"
+              >
+                <Phone className="w-4 h-4" />
+                0916499634
+              </a>
+
+
+            </div>
           </div>
 
           {/* Right Column: Avatar Block */}
           <div className="flex justify-center lg:justify-end order-1 lg:order-2 mb-12 lg:mb-0 pt-16 lg:pt-0">
-            {/* Thêm class `group` ở đây để kích hoạt hiệu ứng hover cho các thẻ con */}
             <div className="group relative w-72 h-72 sm:w-80 sm:h-80 rounded-full border border-white/40 bg-black/40 backdrop-blur-md shadow-2xl flex items-center justify-center transition-all duration-300">
               
               {/* Glow hiệu ứng viền đổi màu phía sau */}
@@ -115,7 +129,6 @@ export default function IntroduceComponent() {
                 />
               </div>
 
-              {/* Badge chức danh hình tròn bo cong bọc phía dưới đáy */}
               <div className="absolute -bottom-3 bg-slate-900/90 backdrop-blur-md px-5 py-1.5 rounded-full border border-white/10 shadow-lg z-20">
                 <h3 className="font-bold text-xs sm:text-sm tracking-wide text-cyan-400">Software Engineer</h3>
               </div>

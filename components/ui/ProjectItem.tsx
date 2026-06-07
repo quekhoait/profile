@@ -75,9 +75,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               <span>Code</span>
             </a>
           )}
+
           {project.demoUrl && (
             <a
-              href={project.demoUrl}
+//               href={project.demoUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 hover:text-blue-400 transition-colors"
